@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 
 using namespace std;
 
@@ -13,17 +14,15 @@ using namespace std;
 
 int main() {
 
-    /** Root node: (2) **/
     TreeNode *root = new TreeNode(1);
 
-    /** Left node: (5) **/
     TreeNode *two = root->left = new TreeNode(2, root);
 
-    /** Right node: (8) **/
     TreeNode *three = root->right = new TreeNode(3, root);
+
+    TreeNode *four = two->left = new TreeNode(4, root);
 
     return 0;
 }
-
 
 
