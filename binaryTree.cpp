@@ -10,7 +10,6 @@ using namespace std;
     }
     int data;
     TreeNode *left, *right, *parent;
-    bool rightThread;
 
     /** Thread **/
 };
