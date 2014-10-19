@@ -136,8 +136,8 @@ int main() {
     mylist.add(75);
     mylist.add(54);
     mylist.add(50);
+    mylist.del(10);
 
-    mylist.print();
     std::cout << std::endl << std::endl;
 
 	return 0;
