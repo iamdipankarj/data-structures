@@ -1,37 +1,21 @@
 #include<iostream>
 
-class BinaryTree {
-private:
-    struct TreeNode {
-        TreeNode(const int & item) {
-            data = item;
-        }
-        int data;
-        TreeNode *left, *right, *parent;
-    };
-
-    TreeNode *root;
-public:
-    BinaryTree(const int & item) {
-        TreeNode *node = new TreeNode(item);
-        node->data = item;
-        node->parent = NULL;
-        node->left = NULL;
-        node->right = NULL;
-        root = node;
+ struct TreeNode {
+    TreeNode(const int & item) {
+        data = item;
     }
-
-    int addLeft(const int & item) {
-        TreeNode *node = new TreeNode(item);
-        node->left = NULL;
-        node->right = NULL;
-    }
+    int data;
+    TreeNode *left, *right, *parent;
 };
 
 int main() {
 
-    BinaryTree tree(2);
-    tree.addLeft(25);
+    TreeNode *root = new TreeNode(2);
+    root->left = NULL;
+    root->right = NULL;
 
     return 0;
 }
+
+
+
