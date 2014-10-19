@@ -10,6 +10,12 @@ using namespace std;
     }
     int data;
     TreeNode *left, *right, *parent;
+
+    /** Get size of tree **/
+    int getSize(TreeNode *root) {
+        if (root == NULL) return 0;
+        return getSize(root->left) + getSize(root->right) + 1;
+    }
 };
 
 int main() {
@@ -21,6 +27,8 @@ int main() {
     TreeNode *three = root->right = new TreeNode(3, root);
 
     TreeNode *four = two->left = new TreeNode(4, root);
+
+    std::cout << root->getSize(root);
 
     return 0;
 }
