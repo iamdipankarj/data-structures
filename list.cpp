@@ -11,15 +11,9 @@ private:
     };
     ListNode *head, *last;
 
-    int length;
-
 public:
-    List() : length(0) {
+    List() {
         head = NULL;
-    }
-
-    const int getCount() {
-        return length;
     }
 
     const int getFront() {
@@ -135,11 +129,15 @@ public:
 
 int main() {
 
-    List tuna;
-    for(int i = 1;i<=20;++i)
-        tuna.add(i);
+    List mylist;
+    mylist.add(10);
+    mylist.add(25);
+    mylist.add(22);
+    mylist.add(75);
+    mylist.add(54);
+    mylist.add(50);
 
-    tuna.print();
+    mylist.print();
     std::cout << std::endl << std::endl;
 
 	return 0;
