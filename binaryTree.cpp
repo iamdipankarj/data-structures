@@ -22,8 +22,6 @@ int main() {
     /** Right node: (8) **/
     TreeNode *three = root->right = new TreeNode(3, root);
 
-
-
     return 0;
 }
 
