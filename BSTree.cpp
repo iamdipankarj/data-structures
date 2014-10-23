@@ -1,49 +1,56 @@
 #include<iostream>
 using namespace std;
 
-class BST {
-private:
-    struct Node {
-        Node(const int & key) : left(NULL), right(NULL) {
-            data = key;
-        }
-        int data;
-        Node *left, *right;
-    };
-
-    Node *root;
-public:
-    BST() {
-        root = NULL;
+ struct TreeNode {
+    TreeNode(const int & item, TreeNode *parentNode = NULL) : left(NULL), right(NULL) {
+        data = item;
+        parent = parentNode;
     }
-
-    void add(const int & key) {
-        Node *node = new Node(key);
-    }
-
-    void leftView() {
-        Node *temp = root;
-        while(temp!=NULL) {
-            cout << temp->data;
-            temp = temp->left;
-        }
-    }
-
+    int data;
+    TreeNode *left, *right, *parent;
 };
+
+TreeNode *add(TreeNode *root, int key, TreeNode *parent = NULL) {
+    TreeNode *current = root;
+
+    if (root == NULL) return new TreeNode(key, parent);
+
+    parent = root;
+
+    if (key < root->data) {
+        root->left = add(root->left, key, parent);
+    }
+
+    else if (key > root->data) {
+        root->right = add(root->right, key, parent);
+    }
+
+    return root;
+}
+
+void inorder(TreeNode *root) {
+    if (root == NULL) return;
+
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
 
 int main() {
 
-    BST tree;
+    TreeNode *root = new TreeNode(50);
+    add(root, 30);
+    add(root, 20);
+    add(root, 40);
+    add(root, 70);
+    add(root, 60);
+    add(root, 80);
 
-    tree.add(50);
-    tree.add(30);
-    tree.add(20);
-    tree.add(40);
-    tree.add(70);
-    tree.add(60);
-    tree.add(80);
+    cout << root->left->left->parent->data;
 
-    tree.leftView();
+    cout << endl;
+    inorder(root);
+
 
     return 0;
 }
