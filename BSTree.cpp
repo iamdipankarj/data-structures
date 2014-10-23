@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
- struct TreeNode {
+struct TreeNode {
     TreeNode(const int & item, TreeNode *parentNode = NULL) : left(NULL), right(NULL) {
         data = item;
         parent = parentNode;
@@ -11,7 +11,6 @@ using namespace std;
 };
 
 TreeNode *add(TreeNode *root, int key, TreeNode *parent = NULL) {
-    TreeNode *current = root;
 
     if (root == NULL) return new TreeNode(key, parent);
 
