@@ -4,17 +4,19 @@ using namespace std;
 class Node {
 private:
     int data;
-    Node *left;
-    Node *right;
+    Node *left, *right, *parent;
 public:
-    Node(int key) {
+    Node(int key, Node *parentNode = NULL) : left(NULL), right(NULL) {
         data = key;
-        left = NULL;
-        right = NULL;
+        parent = parentNode;
     }
 
     int getData() {
         return data;
+    }
+
+    Node *getParent() {
+        return parent;
     }
 
     Node *getLeft() {
@@ -25,12 +27,14 @@ public:
         return right;
     }
 
-    void setLeft(Node *lhs) {
+    Node * setLeft(Node *lhs) {
         left = lhs;
+        return this;
     }
 
-    void setRight(Node *rhs) {
+    Node * setRight(Node *rhs) {
         right = rhs;
+        return this;
     }
 
     Node *setData(int key) {
@@ -42,15 +46,16 @@ public:
 class Tree {
 private:
     Node *root;
-    Node *addHelper(Node *root, const int & key) {
+    Node *addHelper(Node *root, const int & key, Node *parent = NULL) {
         if(root == NULL) {
-            root = new Node(key);
+            root = new Node(key, parent);
             return root;
         }
+        parent = root;
         if(key < root->getData())
-            root->setLeft(addHelper(root->getLeft(), key));
+            root->setLeft(addHelper(root->getLeft(), key, parent));
         else
-            root->setRight(addHelper(root->getRight(), key));
+            root->setRight(addHelper(root->getRight(), key, parent));
     }
 
     void inorderHelper(Node *root) {
@@ -96,7 +101,7 @@ int main() {
     tree.add(80);
     tree.add(10);
 
-    cout << tree.getRoot()->getLeft()->getLeft()->getLeft()->getData() << endl;
+    cout << tree.getRoot()->getLeft()->getLeft()->getParent()->getData() << endl;
 
     tree.inorder();
 
