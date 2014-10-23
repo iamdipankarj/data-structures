@@ -32,6 +32,11 @@ public:
     void setRight(Node *rhs) {
         right = rhs;
     }
+
+    Node *setData(int key) {
+        data = key;
+        return this;
+    }
 };
 
 class Tree {
@@ -77,6 +82,7 @@ public:
         if (root) inorderHelper(root);
     }
 };
+
 
 int main() {
 
