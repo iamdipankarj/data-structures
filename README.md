@@ -6,5 +6,7 @@ Various basic and advanced data structures and algorithms implementations in C++
 - Doubly Linked List
 - Binary Tree
 - Binary Search Tree
+- Suffix Tree
+- Suffix Tree
 
 
