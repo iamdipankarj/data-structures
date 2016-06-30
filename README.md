@@ -1,4 +1,4 @@
 Data Structures
 ===============
 
-Basic data structures implementations in c++
+Various basic and advanced data structures implementations in C++ and Java
