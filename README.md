@@ -7,6 +7,6 @@ Various basic and advanced data structures and algorithms implementations in C++
 - Binary Tree
 - Binary Search Tree
 - Suffix Tree
-- Suffix Tree
+- Trie
 
 
