@@ -10,5 +10,6 @@ Various basic and advanced data structures and algorithms implementations in C++
 - Trie
 - Graphs
 - Sets
+- HashTable
 
 
